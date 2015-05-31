@@ -16,13 +16,18 @@ import android.widget.TextView;
 
 public class LightTextView extends TextView {
 
+    /* Animation attributes */
     private float offsetX;
     private float offsetY;
     private float anchorX;
     private float anchorY;
     private float angel;
-    private int position = 1;
-    private int viewContainerId = -1;
+    /* End of Animation attributes */
+
+    /* Layout attributes */
+    private int position;
+    private int viewContainerId;
+    /* End of Layout attributes */
 
     public LightTextView(Context context) {
         super(context, null);
@@ -44,6 +49,8 @@ public class LightTextView extends TextView {
         }
 
         // default textview attributes
+        position = 1;
+        viewContainerId = -1;
         setGravity(android.view.Gravity.CENTER);
         setTextColor(Color.WHITE);
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 13);
@@ -54,7 +61,7 @@ public class LightTextView extends TextView {
         this.position = position;
     }
 
-    public void setCurrentView(View targetView, int position) {
+    public void setCurrentView(final View targetView) {
 
         // add new layout for combining the textview with the current view
         if (!addNewLayout(targetView)) {
@@ -69,23 +76,30 @@ public class LightTextView extends TextView {
                 } else {
                     getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 }
-
+                doAnime(getMeasuredWidth(), targetView.getMeasuredWidth(), position);
             }
         });
     }
 
-    private Animation animation = new Animation() {
-        @Override
-        protected void applyTransformation(float interpolatedTime, Transformation t) {
-            Matrix matrix = t.getMatrix();
-            matrix.postTranslate(offsetX, offsetY);
-            matrix.postRotate(angel, anchorX, anchorY);
-        }
-    };
+    private void doAnime(int lightWidth, int targetWidth, int position) {
 
-    public class Position {
-        public static final int LEFT_CORNER = 1;
-        public static final int RIGHT_CORNER = 2;
+        float edge = (float) ((lightWidth - 2 * Util.pixelFromDp(Util.pixelFromDp(10, getContext()), getContext())) / (2 * 1.414));
+        // if LEFT_CORNER
+        if (position == 1) {
+            anchorX = -edge;
+            offsetX = anchorX;
+            angel = -45;
+        } else if (position == 2) {
+            offsetX = targetWidth + edge - lightWidth;
+            anchorX = targetWidth + edge;
+            angel = 45;
+        }
+
+        anchorY = (float) (1.414 * Util.pixelFromDp(Util.pixelFromDp(10, getContext()), getContext()) + edge);
+        offsetY = anchorY;
+
+        clearAnimation();
+        startAnimation(animation);
     }
 
     private boolean addNewLayout(View targetView) {
@@ -144,5 +158,20 @@ public class LightTextView extends TextView {
         }
         return true;
     }
+
+    private Animation animation = new Animation() {
+        @Override
+        protected void applyTransformation(float interpolatedTime, Transformation t) {
+            Matrix matrix = t.getMatrix();
+            matrix.postTranslate(offsetX, offsetY);
+            matrix.postRotate(angel, anchorX, anchorY);
+        }
+    };
+
+    public class Position {
+        public static final int LEFT_CORNER = 1;
+        public static final int RIGHT_CORNER = 2;
+    }
+
 }
 
