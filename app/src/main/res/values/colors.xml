@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="background_purple">#3F2466</color>
+    <color name="apptheme_color">#61408c</color>
+    <color name="light_purple_button">#e1d2f3</color>
+    <color name="pressed_purple_button">#ba9dda</color>
+    <color name="focused_purple_button">#d6c3ed</color>
+    <color name="text_color">#250054</color>
+    <color name="post_buttons_bg">#ffd6dfff</color>
+    <color name="HomeTimeLabel">#888888</color>
+    <color name="PlayTrack">#99000000</color>
+    <color name="PostActivity_progress">#392B52</color>
+    <color name="gray_light">#e8e8e8</color>
+    <color name="mainActivityBackground">#d3d6db</color>
+
+    <color name="holo_light_blue">#33B5E5</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#575757</color>
+    <color name="red">#ffff0d00</color>
+    <color name="blue">#ff0008ff</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="semi_transparent_black">#C8000000</color>
+</resources>
