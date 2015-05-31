@@ -3,9 +3,11 @@ package com.neno0o.lighttextviewlib;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
@@ -50,6 +52,26 @@ public class LightTextView extends TextView {
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    public void setCurrentView(View targetView, int position) {
+
+        // add new layout for combining the textview with the current view
+        if (!addNewLayout(targetView)) {
+            return;
+        }
+
+        ViewTreeObserver viewTreeObserver = getViewTreeObserver();
+        viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            public void onGlobalLayout() {
+                if (Build.VERSION.SDK_INT < 16) {
+                    getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                } else {
+                    getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                }
+
+            }
+        });
     }
 
     private Animation animation = new Animation() {
