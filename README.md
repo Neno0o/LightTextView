@@ -7,7 +7,7 @@ Easy way to add textview above other views.
 Gradle:
 
 ```groovy
-compile(group: 'com.neno0o.lighttextview', name: 'lib', version: '1.0', ext: 'aar')
+compile 'com.neno0o.lighttextview:lib:1.0'
 ```
 
 Maven:
