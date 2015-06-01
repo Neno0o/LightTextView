@@ -1,5 +1,6 @@
 package com.neno0o.lighttextview;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -8,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.devspark.robototextview.util.RobotoTextViewUtils;
+import com.devspark.robototextview.util.RobotoTypefaceManager;
 import com.neno0o.lighttextviewlib.LightTextView;
 
 
@@ -40,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         LightTextView lightTextView3 = new LightTextView(this);
         lightTextView3.setText("HD");
         lightTextView3.setBackgroundColor(getResources().getColor(R.color.black));
+        Typeface typeface = RobotoTypefaceManager.obtainTypeface(
+                getApplicationContext(),
+                RobotoTypefaceManager.Typeface.ROBOTO_LIGHT_ITALIC);
+        RobotoTextViewUtils.setTypeface(lightTextView3, typeface);
         lightTextView3.setCurrentView(imageView);
     }
 

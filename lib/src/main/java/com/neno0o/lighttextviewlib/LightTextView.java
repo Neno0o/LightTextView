@@ -12,9 +12,10 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-public class LightTextView extends TextView {
+import com.devspark.robototextview.widget.RobotoTextView;
+
+public class LightTextView extends RobotoTextView {
 
     /* Animation attributes */
     private float offsetX;
