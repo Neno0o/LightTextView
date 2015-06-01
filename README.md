@@ -12,7 +12,7 @@ lightTextView.setText("CLICK");
 lightTextView.setBackgroundColor(getResources().getColor(R.color.blue));
 lightTextView.setCurrentView(button);
 ```
-setPosition - LEFT_CORNER default
+setPosition - `LEFT_CORNER` default
 
 ``` java
 lightTextView.setPosition(LightTextView.Position.RIGHT_CORNER);
