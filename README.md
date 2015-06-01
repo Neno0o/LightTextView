@@ -25,3 +25,7 @@ Typeface typeface = RobotoTypefaceManager.obtainTypeface(
                 RobotoTypefaceManager.Typeface.ROBOTO_LIGHT_ITALIC);
 RobotoTextViewUtils.setTypeface(lightTextView, typeface);
 ```
+
+# Thanks to:
+
++ [RobotoTextView](https://github.com/johnkil/Android-RobotoTextView) 
