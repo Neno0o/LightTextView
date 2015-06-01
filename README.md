@@ -2,6 +2,25 @@
 
 Easy way to add textview above other views.
 
+# Download
+
+Gradle:
+
+```groovy
+compile(group: 'com.neno0o.lighttextview', name: 'lib', version: '1.0', ext: 'aar')
+```
+
+Maven:
+
+```xml
+<dependency>
+  <groupId>com.neno0o.lighttextview</groupId>
+  <artifactId>lib</artifactId>
+  <version>1.0</version>
+  <type>aar</type>
+</dependency>
+```
+
 # Usage
 
 LightTextView extends `RobotoTextView` which extends `TextView`.
