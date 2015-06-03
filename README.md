@@ -1,7 +1,6 @@
 # LightTextView
 
 Easy way to add textview above other views.
-
 ![](./art/art.png)
 
 # Download
@@ -9,7 +8,7 @@ Easy way to add textview above other views.
 Gradle:
 
 ```groovy
-compile 'com.neno0o.lighttextview:lib:1.0'
+compile 'com.neno0o.lighttextview:lib:1.1'
 ```
 
 Maven:
@@ -18,7 +17,7 @@ Maven:
 <dependency>
   <groupId>com.neno0o.lighttextview</groupId>
   <artifactId>lib</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
   <type>aar</type>
 </dependency>
 ```
