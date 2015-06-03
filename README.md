@@ -30,7 +30,7 @@ LightTextView extends `RobotoTextView` which extends `TextView`.
 
 ``` java
 LightTextView lightTextView = new LightTextView(this);
-lightTextView.setText("CLICK");
+lightTextView.setText("HD");
 lightTextView.setBackgroundColor(getResources().getColor(R.color.blue));
 lightTextView.setCurrentView(button);
 ```
