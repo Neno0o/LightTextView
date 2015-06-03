@@ -1,5 +1,7 @@
 # LightTextView
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-LightTextView-green.svg?style=flat)](https://android-arsenal.com/details/1/1925)
+
 Easy way to add textview above other views.
 ![](./art/art.png)
 
