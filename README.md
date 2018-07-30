@@ -48,10 +48,6 @@ Typeface typeface = RobotoTypefaceManager.obtainTypeface(
 RobotoTextViewUtils.setTypeface(lightTextView, typeface);
 ```
 
-# Thanks to:
-
-+ [RobotoTextView](https://github.com/johnkil/Android-RobotoTextView) 
-
 # License
 
     Copyright 2015 Neno0o
